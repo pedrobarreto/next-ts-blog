@@ -6,9 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "type-check": "tsc --project tsconfig.json --pretty --noEmit",
+    "eslint": "eslint --ext js,jsx,ts,tsx --fix .",
     "lint": "next lint"
   },
   "dependencies": {
+    "autoprefixer": "^10.4.4",
     "axios": "^0.26.1",
     "next": "12.1.4",
     "react": "18.0.0",
