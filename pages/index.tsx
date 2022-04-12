@@ -14,14 +14,13 @@ const Home: NextPage = ({posts}) => {
   const handleClick = async () => {
     setPagination(pagination + 1)
     const newPosts = await getDevApi('articles', pagination)
-    console.log('foi');
     setPosts((post) => [...post, ...newPosts]);
   };
 
   return (
   
-      <main className="container mx-auto">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <main className=" pt-6 container mx-auto">
+      <div className="p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {data.map((post, index) => (
             <PostCard key={index} post={post} />
             
