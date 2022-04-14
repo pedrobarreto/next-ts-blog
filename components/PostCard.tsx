@@ -1,26 +1,34 @@
-import Link from 'next/link';
+import Image from 'next/image'
+import thumb from '../utils/thumb.jpg'
 
 const PostCard = ({post}): JSX.Element => {
     
     const handleImage = () => {
         if(!post.cover_image){
-            post.cover_image = "https://res.cloudinary.com/practicaldev/image/fetch/s--60PwhrVB--/c_imagga_scale,f_auto,fl_progressive,h_420,q_66,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ot0ox673tyiingfdiuc3.gif"
+            return thumb
         }
         return post.cover_image
       };
 
     return (
     
-<div className="bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
-    <a href="#">
-        <img className="rounded-t-lg object-fill h-48 w-100"  src={handleImage()} alt="" />
-    </a>
+<div className=" rounded-xl border-4 border-zinc-600 shadow-md dark:bg-zinc-800 hover:bg-gradient-to-r from-purple-500 to-pink-500">
+<div className="object-contain h-48 w-100 relative">
+  <Image
+    src={handleImage()}
+    alt=""
+    layout="fill" 
+    objectFit="fill" 
+  />
+</div>
     <div className="p-5">
-        {/* <a href="#">
+        <a href="#">
             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-            <Link href={`/post/${post.slug}`}>{post.title}</Link>
+
+            {/* <Link href={`/post/${post.slug}`}>{post.title}</Link> */}
+           {post.title}
             </h5>
-        </a> */}
+        </a>
         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
             {post.description}
         </p>

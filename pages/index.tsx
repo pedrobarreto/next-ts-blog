@@ -1,47 +1,17 @@
 import type { NextPage } from 'next'
-import React, { useState } from 'react';
 import { GetServerSideProps } from 'next'
 import { getDevApi } from '../services/DevApi'
-import PostCard from '../components/PostCard'
-import InfiniteScroll from "react-infinite-scroll-component";
+import BlogList from '../components/BlogList';
 
 
 const Home: NextPage = ({posts}) => {
-  const [data, setPosts] = useState(posts);
-  const [pagination, setPagination] = useState(2)
-  // const [hasMore, setHasMore] = useState(true);
-  
-  const handleClick = async () => {
-    setPagination(pagination + 1)
-    const newPosts = await getDevApi('articles', pagination)
-    setPosts((post) => [...post, ...newPosts]);
-  };
 
   return (
   
-      <main className=" pt-6 container mx-auto">
-      <div className="p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {data.map((post, index) => (
-            <PostCard key={index} post={post} />
-            
-          ))}
-    
-          </div>
-
-      <footer>
-       <>
-      <InfiniteScroll
-        dataLength={data.length}
-        next={handleClick}
-        hasMore={true}
-        loader={<h3> Carregando...</h3>}
-        endMessage={<h4>Acabaram os posts</h4>}
-      >
-      </InfiniteScroll>
-    
-    </>
-      </footer>
-      </main>
+    <main className=" pt-6 container mx-auto">
+     <BlogList  posts={posts} />
+   </main>
+      
 
   )
 }
