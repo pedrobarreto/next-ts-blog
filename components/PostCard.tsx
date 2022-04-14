@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import thumb from '../utils/thumb.jpg'
 
-const PostCard = ({post}): JSX.Element => {
+const PostCard = ({post}:any): JSX.Element => {
     
     const handleImage = () => {
         if(!post.cover_image){

@@ -1,10 +1,10 @@
 import type { NextPage } from 'next'
 import { GetServerSideProps } from 'next'
-import { getDevApi } from '../services/DevApi'
+import { requestPosts } from '../services/requests';
 import BlogList from '../components/BlogList';
 
 
-const Home: NextPage = ({posts}) => {
+const Home: NextPage = ({posts}:any) => {
 
   return (
   
@@ -17,7 +17,7 @@ const Home: NextPage = ({posts}) => {
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const posts = await getDevApi('articles', 1 )
+  const posts = await requestPosts('/posts')
   return { props: { posts } } 
 }
 

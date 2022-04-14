@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
 import InfiniteScroll from "react-infinite-scroll-component";
 import PostCard from '../components/PostCard'
-import { getDevApi } from '../services/DevApi'
 
-const BlogList = ({posts}): JSX.Element => {
+const BlogList = ({posts}:any): JSX.Element => {
 
   const [data, setPosts] = useState(posts);
   const [pagination, setPagination] = useState(2)
   
   const handleClick = async () => {
     setPagination(pagination + 1)
-    const newPosts = await getDevApi('articles', pagination)
-    setPosts((post) => [...post, ...newPosts]);
+    // const newPosts = await getDevApi('articles', pagination)
+    // setPosts((post:any) => [...post, ...newPosts]);
   };
 
     return (
@@ -20,7 +19,7 @@ const BlogList = ({posts}): JSX.Element => {
  
       <div className="p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-      {data.map((post, index) => ( 
+      {data.map((post: any, index: React.Key | null | undefined) => ( 
      
             <PostCard key={index} post={post} />
              ))} 
