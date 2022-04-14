@@ -17,7 +17,7 @@ const Home: NextPage = ({posts}:any) => {
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const posts = await requestPosts('/posts')
+  const posts = await requestPosts('/posts', {pagination: 1})
   return { props: { posts } } 
 }
 

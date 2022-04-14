@@ -1,6 +1,8 @@
+import { request } from 'https';
 import React, { useState } from 'react';
 import InfiniteScroll from "react-infinite-scroll-component";
 import PostCard from '../components/PostCard'
+import { requestPosts } from '../services/requests';
 
 const BlogList = ({posts}:any): JSX.Element => {
 
@@ -9,8 +11,8 @@ const BlogList = ({posts}:any): JSX.Element => {
   
   const handleClick = async () => {
     setPagination(pagination + 1)
-    // const newPosts = await getDevApi('articles', pagination)
-    // setPosts((post:any) => [...post, ...newPosts]);
+    const newPosts = await requestPosts('/posts', { pagination })
+    setPosts((post:any) => [...post, ...newPosts]);
   };
 
     return (
