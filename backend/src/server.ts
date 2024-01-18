@@ -10,7 +10,7 @@ dotenv.config();
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
-const port = 3001;
+const port = 10000;
 
 
 app.post('/posts', getPosts);
