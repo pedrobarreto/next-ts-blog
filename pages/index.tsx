@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import { GetServerSideProps } from 'next'
+import { GetStaticProps } from 'next'
 import { requestPosts } from '../services/requests';
 import BlogList from '../components/BlogList';
 
@@ -16,7 +16,7 @@ const Home: NextPage = ({posts}:any) => {
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getServerSideProps: GetStaticProps = async () => {
   const posts = await requestPosts('/posts', {pagination: 1})
   return { props: { posts } } 
 }
