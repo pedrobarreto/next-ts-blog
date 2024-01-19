@@ -1,5 +1,5 @@
 {
-  "name": "pedrobarreto-blog",
+  "name": "pedrobarreto-dev-to",
   "version": "1.0.0",
   "description": "Blog Express Server",
   "main": "src/app.ts",
