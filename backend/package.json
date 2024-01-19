@@ -1,7 +1,7 @@
 {
-  "name": "farofa-tech",
+  "name": "pedrobarreto-blog",
   "version": "1.0.0",
-  "description": "Farofa Tech Express Server",
+  "description": "Blog Express Server",
   "main": "src/app.ts",
   "scripts": {
     "build": "npx tsc",
