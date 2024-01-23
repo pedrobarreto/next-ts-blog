@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: `https://next-ts-blog-lime.vercel.app`,
+  baseURL: `https://portfolio-backend-seven-alpha.vercel.app`,
 });
 
 export const requestPosts = async (endpoint, body) => {
