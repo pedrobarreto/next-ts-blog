@@ -13,9 +13,9 @@ const Header = (): JSX.Element => (
     "
     >
         <Link href="/">
-            <a>
+            {/* <a>
                 <span>Pedro Barreto</span>
-            </a>
+            </a> */}
         </Link>
         <div className="flex flex-row items-center">
            <Navigation /> 

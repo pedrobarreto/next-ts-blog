@@ -25,9 +25,9 @@ const Navigation = (): JSX.Element => {
             <nav className="flex">
                 {links.map(({ name, href }) => (
                     <Link key={name} href={href}>
-                        <a className="mr-6 sm:mr-8 flex flex-col relative">
+                        {/* <a className="mr-6 sm:mr-8 flex flex-col relative">
                             {name}
-                        </a>
+                        </a> */}
                     </Link>
                 ))}
             </nav>
